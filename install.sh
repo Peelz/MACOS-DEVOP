@@ -1,16 +1,16 @@
 #! /bin/sh
 
+# edit bash_profile
+echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
+
 # install home brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-
 # install XCODE
+xcode-select --install
 
 # install node-lts
-# Manually (Optiontional)
-# sudo installer -pkg ./node-v12.13.0.pkg -target /
-
-brew cask install node@10
+brew install node@10
 
 # install npm global
 # - appium
@@ -20,10 +20,7 @@ brew cask install node@10
 npm install -g appium appium-doctor @react-native-community/cli react-native-rename firebase-tools
 
 # install jdk8 
-brew cask install adoptopenjdk8
-
-# Manually (Optiontional)
-# sudo installer -pkg ./OpenJDK8U-jdk_x64_mac_hotspot_8u232b09.pkg -target /
+brew cask install adoptopenjdk/openjdk/adoptopenjdk8
 
 # install jenkins 
 brew install jenkins-lts
@@ -33,7 +30,6 @@ sed -i "" "s~httpListenAddress=127.0.0.1~httpListenAddress=0.0.0.0~g" /usr/local
 
 # start jenkins-lts 
 brew services restart jenkins-lts
-
 
 # installing Android dev tools
 brew install ant
@@ -52,9 +48,6 @@ sdkmanager --install "system-images;android-28;google_apis;x86" "system-images;a
 
 # create avd emulatord
 echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86" --tag "google_apis" --abi "x86"
-
-# edit bash_profile
-echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
 
 # appium startup
 
