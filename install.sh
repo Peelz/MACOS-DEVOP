@@ -16,6 +16,7 @@ xcode-select --install
 
 # install node-lts
 brew install node@10
+brew install watchman
 
 # install npm global
 # - appium
