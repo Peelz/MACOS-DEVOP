@@ -6,7 +6,9 @@ echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 # install home brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! command -v brew; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 # install XCODE
 xcode-select --install
@@ -37,8 +39,7 @@ brew services restart jenkins-lts
 brew install ant
 brew install maven
 brew install gradle
-brew install android-sdk
-brew install android-ndk
+brew cask install android-sdk
 
 touch ~/.android/repositories.cfg
 
