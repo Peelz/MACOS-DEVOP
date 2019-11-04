@@ -1,7 +1,8 @@
 #! /bin/sh
 
 # edit bash_profile
-echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
+# echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
+cp bash_profile_setting.sh $HOME/.bash_profile
 
 source $HOME/.bash_profile
 
