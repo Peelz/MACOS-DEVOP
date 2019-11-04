@@ -14,6 +14,9 @@ fi
 # install XCODE
 xcode-select --install
 
+# install cocoapod
+sudo gem install -n /usr/local/bin cocoapods
+
 # install node-lts
 brew install node@10
 brew install watchman
