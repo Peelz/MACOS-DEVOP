@@ -48,10 +48,10 @@ touch ~/.android/repositories.cfg
 sdkmanager "platform-tools" "platforms;android-26" "platforms;android-27" "platforms;android-28"
 
 # install avd
-sdkmanager --install "system-images;android-28;google_apis;x86" "system-images;android-27;google_apis;x86"
+sdkmanager --install "system-images;android-28;google_apis;x86_64" "system-images;android-27;google_apis;x86_64"
 
 # create avd emulatord
-echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86" --tag "google_apis" --abi "x86"
+echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "x86_64"
 
 # appium startup
 
