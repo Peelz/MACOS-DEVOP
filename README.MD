@@ -1,12 +1,83 @@
-# Install .dmg
+# All command executed
 
-sudo hdiutil attach [disk-image-name].dmg
-Enter into the mount volume:
+## edit bash_profile
+```sh
+cp bash_profile_setting.sh $HOME/.bash_profile
 
-cd /Volumes/[disk-image-name]
-Then, copy entire .app folder to /Applications folder:
+source $HOME/.bash_profile
+```
 
-sudo cp -rf [app-name].app /Applications
-Finally, unmount the disk image:
+## install home brew
+``` sh
+if ! command -v brew; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+```
 
-sudo hdiutil detach /Volumes/[disk-image-name]
+## install XCODE
+```sh
+xcode-select --install
+```
+
+## install cocoapod
+```
+sudo gem install -n /usr/local/bin cocoapods
+```
+## install node-lts
+```
+brew install node@10
+brew install watchman
+```
+## install npm global
+## - appium
+## - appium-doctor
+## - react-native-cli
+## - react-native-rename
+```
+npm install -g appium appium-doctor @react-native-community/cli react-native-rename firebase-tools
+```
+
+## install jdk8 
+```
+brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+```
+
+## install jenkins 
+```
+brew install jenkins-lts
+```
+
+## allow all request
+```
+sed -i "" "s~httpListenAddress=127.0.0.1~httpListenAddress=0.0.0.0~g" /usr/local/opt/jenkins-lts/homebrew.mxcl.jenkins-lts.plist
+```
+
+## start jenkins-lts 
+```
+brew services restart jenkins-lts
+```
+
+## installing Android dev tools
+```
+brew install ant
+brew install maven
+brew install gradle
+brew cask install android-sdk
+
+touch ~/.android/repositories.cfg
+```
+
+## install android sdk platform
+```
+sdkmanager "platform-tools" "platforms;android-26" "platforms;android-27" "platforms;android-28"
+```
+
+## install avd
+```
+sdkmanager --install "system-images;android-28;google_apis;x86_64"
+```
+
+## create avd emulatord
+```
+echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "google_apis/x86_64"
+```
