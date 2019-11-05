@@ -58,4 +58,6 @@ sdkmanager --install "system-images;android-28;google_apis;x86_64"
 echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "google_apis/x86_64"
 
 # Open Browser for jenkins setting up
-open "localhost:8080"
+echo "##### Jenkins initial password ######"
+printf "\n\x1b[32m$(cat $HOME/.jenkins/secrets/initialAdminPassword)\x1b[0m\n\n"
+open "http://localhost:8080"
