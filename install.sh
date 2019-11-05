@@ -57,6 +57,5 @@ sdkmanager --install "system-images;android-28;google_apis;x86_64"
 # create avd emulatord
 echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "google_apis/x86_64"
 
-# appium startup
-
-# [Last] Mannual restore jenkins
+# Open Browser for jenkins setting up
+open "localhost:8080"

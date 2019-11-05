@@ -77,7 +77,12 @@ sdkmanager "platform-tools" "platforms;android-26" "platforms;android-27" "platf
 sdkmanager --install "system-images;android-28;google_apis;x86_64"
 ```
 
-## create avd emulatord
+## create avd emulator
 ```
 echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "google_apis/x86_64"
+```
+
+# Open Browser for jenkins setting up
+```
+open "localhost:8080"
 ```
