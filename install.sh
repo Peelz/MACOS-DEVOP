@@ -58,5 +58,5 @@ echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --packa
 
 # Open Browser for jenkins setting up
 echo "##### Jenkins initial password ######"
-printf "\n\x1b[32m$(cat $HOME/.jenkins/secrets/initialAdminPassword)\x1b[0m\n\n"
+echo "\n\x1b[32m$(cat $HOME/.jenkins/secrets/initialAdminPassword)\x1b[0m\n"
 open "http://localhost:8080"
