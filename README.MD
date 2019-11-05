@@ -84,5 +84,5 @@ echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --packa
 
 # Open Browser for jenkins setting up
 ```
-open "localhost:8080"
+open "http://localhost:8080"
 ```
