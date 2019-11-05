@@ -10,5 +10,9 @@ export PATH=/usr/local/opt/node@10/bin:$PATH
 
 # check appium is running
 if [ ! -n "$(lsof -n -i:4723 | grep LISTEN)" ]; then 
-    appium &
+    if command -v appium; then
+        appium &
+    else 
+        printf "\x1b[31mappium not found\x1b[0m\n"
+    fi
 fi
