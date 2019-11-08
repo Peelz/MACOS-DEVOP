@@ -16,6 +16,9 @@ xcode-select --install
 # install cocoapod
 sudo gem install -n /usr/local/bin cocoapods
 
+# install fastlane 
+sudo gem install fastlane -NV
+
 # install node-lts
 brew install node@10
 brew install watchman
@@ -25,6 +28,7 @@ brew install watchman
 # - appium-doctor
 # - react-native-cli
 # - react-native-rename
+# - firebase-tools
 npm install -g appium appium-doctor @react-native-community/cli react-native-rename firebase-tools
 
 # install jdk8 
@@ -59,4 +63,8 @@ echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --packa
 # Open Browser for jenkins setting up
 echo "##### Jenkins initial password ######"
 echo "\n\x1b[32m$(cat $HOME/.jenkins/secrets/initialAdminPassword)\x1b[0m\n"
+
 open "http://localhost:8080"
+
+# login firebase
+firebase login
