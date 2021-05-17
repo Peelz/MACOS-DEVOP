@@ -25,6 +25,8 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 
 export PATH="$PATH:$HOME/.rvm/bin"
 
+source $HOME/.rvm/scripts/rvm
+
 if ! command -v rvm; then
     echo "rvm not installed"
     exit 1
