@@ -2,8 +2,7 @@
 
 # edit bash_profile
 # echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
-cp bash_profile_setting.sh $HOME/.bash_profile
-source $HOME/.bash_profile
+curl https://raw.githubusercontent.com/Peelz/macos-server-setup/master/bash_profile.sh -o ~/.bash_profile
 
 # install home brew
 if ! command -v brew; then
@@ -42,6 +41,8 @@ pod --version
 # install node-lts
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 nvm install --lts
+
+source ~/.
 
 # install watchman
 brew install watchman
