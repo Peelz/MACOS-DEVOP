@@ -24,6 +24,11 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 export PATH="$PATH:$HOME/.rvm/bin"
 
+if ! command -v rvm; then
+    echo "rvm not installed"
+    exit 1
+fi
+
 rvm install 2.7.2
 rvm use 2.7.2
 
