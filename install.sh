@@ -22,7 +22,8 @@ xcode-select --install
 brew install gnupg
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-rvm use 2.2.0
+rvm install 2.7.2
+rvm use 2.7.2
 
 # display ruby version
 ruby -v
