@@ -14,57 +14,55 @@ fi
 xcode-select --install
 
 # install cocoapod
-sudo gem install -n /usr/local/bin cocoapods
+# sudo gem install -n /usr/local/bin cocoapods
 
 # install fastlane 
-sudo gem install fastlane -NV
+# sudo gem install fastlane -NV
+
+# install rvm
+brew install gnupg
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+rvm use 2.2.0
+
+# display ruby version
+ruby -v
+gem env
+
+# install fastland and cocoapod
+gem install fastlane
+gem install cocoapods
+
+# display fastlane version
+fastlane --version
+
+# display pod version
+pod --version
 
 # install node-lts
-brew install node@10
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+nvm install --lts
+
+# install watchman
 brew install watchman
 
-# install npm global
-# - appium
-# - appium-doctor
-# - react-native-cli
-# - react-native-rename
-# - firebase-tools
-npm install -g appium appium-doctor @react-native-community/cli react-native-rename firebase-tools
-
 # install jdk8 
-brew cask install adoptopenjdk/openjdk/adoptopenjdk8
-
-# install jenkins 
-brew install jenkins-lts
-
-# allow all request
-sed -i "" "s~httpListenAddress=127.0.0.1~httpListenAddress=0.0.0.0~g" /usr/local/opt/jenkins-lts/homebrew.mxcl.jenkins-lts.plist
-
-# start jenkins-lts 
-brew services restart jenkins-lts
+brew tap adoptopenjdk/openjdk
+brew install adoptopenjdk8
 
 # installing Android dev tools
 brew install ant
 brew install maven
 brew install gradle
-brew cask install android-sdk
+brew install android-sdk
 
 touch ~/.android/repositories.cfg
 
 # install android sdk platform
-sdkmanager "platform-tools" "platforms;android-26" "platforms;android-27" "platforms;android-28"
+sdkmanager "platform-tools" "platforms;android-26" "platforms;android-27"  "platforms;android-28" "platforms;android-29" "platforms;android-30"
 
 # install avd
-sdkmanager --install "system-images;android-28;google_apis;x86_64"
+# sdkmanager --install "system-images;android-28;google_apis;x86_64"
 
 # create avd emulatord
-echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "google_apis/x86_64"
-
-# Open Browser for jenkins setting up
-echo "##### Jenkins initial password ######"
-echo "\n\x1b[32m$(cat $HOME/.jenkins/secrets/initialAdminPassword)\x1b[0m\n"
-
-open "http://localhost:8080"
-
-# login firebase
-firebase login
+# echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "google_apis/x86_64"
