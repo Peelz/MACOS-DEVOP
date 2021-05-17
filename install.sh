@@ -34,7 +34,10 @@ gem install fastlane
 gem install cocoapods
 
 # display fastlane version
-fastlane --version
+if ! command -v fastlane; then
+    echo "fastlane not installed"
+    exit 1
+fi
 
 # display pod version
 pod --version
