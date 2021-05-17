@@ -2,7 +2,7 @@
 
 # edit bash_profile
 # echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
-curl https://raw.githubusercontent.com/Peelz/macos-server-setup/master/bash_profile.sh -o ~/.bash_profile
+curl -s https://raw.githubusercontent.com/Peelz/macos-server-setup/master/bash_profile.sh -o ~/.bash_profile
 
 # install home brew
 if ! command -v brew; then
