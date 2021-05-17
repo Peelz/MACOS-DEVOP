@@ -30,7 +30,7 @@ if ! command -v rvm; then
 fi
 
 rvm install 2.7.2
-rvm use 2.7.2
+rvm 2.7.2
 
 # display ruby version
 ruby -v
