@@ -22,6 +22,8 @@ xcode-select --install
 brew install gnupg
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 
+export PATH="$PATH:$HOME/.rvm/bin"
+
 rvm install 2.7.2
 rvm use 2.7.2
 
