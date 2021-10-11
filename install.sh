@@ -1,7 +1,6 @@
 #! /bin/sh
 
 # edit bash_profile
-# echo "$(cat bash_profile_setting.sh )" >> $HOME/.bash_profile
 curl -s https://raw.githubusercontent.com/Peelz/macos-server-setup/master/bash_profile.sh -o ~/.bash_profile
 
 # install home brew
@@ -11,12 +10,6 @@ fi
 
 # install XCODE
 xcode-select --install
-
-# install cocoapod
-# sudo gem install -n /usr/local/bin cocoapods
-
-# install fastlane 
-# sudo gem install fastlane -NV
 
 # install rvm
 brew install gnupg
@@ -76,18 +69,4 @@ brew install adoptopenjdk8
 brew install ant
 brew install maven
 brew install gradle
-brew install android-sdk
-brew install android-ndk
 
-android update sdk --no-ui
-
-touch ~/.android/repositories.cfg
-
-# install android sdk platform
-sdkmanager "platform-tools" "platforms;android-26" "platforms;android-27"  "platforms;android-28" "platforms;android-29" "platforms;android-30"
-
-# install avd
-# sdkmanager --install "system-images;android-28;google_apis;x86_64"
-
-# create avd emulatord
-# echo "no" | avdmanager --verbose create avd --force --name "emulator-28" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "google_apis/x86_64"
